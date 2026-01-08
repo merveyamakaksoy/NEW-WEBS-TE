@@ -851,10 +851,83 @@ awardImages.forEach(imgName => {
                         <p class="project-award">Honorable Mention</p>
                         <div class="project-meta">
                             <span>📍 Montenegro</span>
-                            <span>2021</span>
+                            <span>2025</span>
                         </div>
                     </div>
                 </div>
+                       <div class="project-card fade-in">
+                    <div class="award-section" style="position: relative; margin: 1.5rem 0;">
+  <button onclick="document.getElementById('zlatica-slider').scrollBy({left: -400, behavior: 'smooth'})" 
+          style="position: absolute; left: -10px; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❮</button>
+
+  <button onclick="document.getElementById('zlatica-slider').scrollBy({left: 400, behavior: 'smooth'})" 
+          style="position: absolute; right: -10px; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❯</button>
+
+  <div id="zlatica-slider" style="display: flex; overflow-x: auto; gap: 15px; padding: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;">
+  </div>
+</div>
+                    <script>
+const zlaticaImages = [
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 1.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 2.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 3.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 4.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 5.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 6.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 7.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 8.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 9.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 10.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 11.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 12.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 13.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 14.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 15.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 16.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 17.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 18.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 19.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 20.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 21.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 22.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 23.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 24.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 25.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 26.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 27.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 28.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 29.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 30.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 31.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 32.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 33.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 34.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 35.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 36.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 37.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 38.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 39.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 40.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 41.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 42.jpg",
+    "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 43.jpg"
+];
+
+const sliderDiv = document.getElementById('award-slider');
+
+awardImages.forEach(imgName => {
+  const wrapper = document.createElement('div');
+  wrapper.style.cssText = "flex: 0 0 350px; scroll-snap-align: center;";
+  
+  const img = document.createElement('img');
+  img.src = encodeURI(imgName); 
+  img.style.cssText = "width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);";
+  
+  wrapper.appendChild(img);
+  sliderDiv.appendChild(wrapper);
+});
+</script>
+</div>
 
                 <div class="project-card fade-in">
                     <div class="project-image">🌳</div>
@@ -1224,6 +1297,7 @@ awardImages.forEach(imgName => {
     </script>
 </body>
 </html>
+
 
 
 
