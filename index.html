@@ -1,46 +1,1141 @@
-<!doctype html>
-<html lang="tr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Benim Site - Manus Verileri</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; line-height:1.6; }
-    header { margin-bottom: 1.5rem; }
-    .entry { border-bottom: 1px solid #eee; padding: 0.75rem 0; }
-    .entry h2 { margin:0 0 0.25rem 0; font-size:1.1rem; }
-    .entry p { margin:0; color:#333; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merve Yamak - Landscape Architect & Urban Designer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #7fb069;
+            --primary-light: #a8d5a8;
+            --secondary: #f5d5d0;
+            --accent: #b8d4e8;
+            --foreground: #1a1a1a;
+            --background: #fefdfb;
+            --border: #e8e4df;
+            --muted: #f0ebe6;
+            --muted-foreground: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(254, 253, 251, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 50;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--foreground);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--foreground);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-light);
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(127, 176, 105, 0.05) 0%, rgba(184, 212, 232, 0.05) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--muted-foreground);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--foreground);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        /* About Section */
+        #about {
+            background: var(--background);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .about-card h3 {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--foreground);
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--muted-foreground);
+            line-height: 1.8;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-award {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--muted-foreground);
+        }
+
+        /* Awards Section */
+        #awards {
+            background: white;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .award-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .award-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .award-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .award-content {
+            padding: 1.5rem;
+        }
+
+        .award-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--foreground);
+        }
+
+        .award-event {
+            font-size: 0.9rem;
+            color: var(--muted-foreground);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-year {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Video Gallery */
+        #media {
+            background: var(--muted);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-content {
+            padding: 1.5rem;
+        }
+
+        .video-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .video-meta {
+            font-size: 0.85rem;
+            color: var(--muted-foreground);
+        }
+
+        /* Services Section */
+        #services {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--muted);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--muted-foreground);
+            line-height: 1.7;
+        }
+
+        /* Blog Section */
+        #blog {
+            background: var(--background);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .blog-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .blog-category {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-date {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--foreground);
+        }
+
+        .blog-excerpt {
+            color: var(--muted-foreground);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-read-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .blog-read-more:hover {
+            color: var(--primary-light);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: white;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-description {
+            color: var(--muted-foreground);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-method {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-method a {
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--foreground);
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Manus Verilerim</h1>
-    <p>Bu sayfa Manus'tan aldığım verilerin gösterimi için örnektir.</p>
-  </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">Merve Yamak</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
 
-  <main id="content">
-    <!-- Eğer verileriniz JSON ise fetch ve JS ile ekleyebilirsiniz -->
-    <div class="entry">
-      <h2>Örnek Başlık 1</h2>
-      <p>Örnek içerik — Manus'tan çekilen veri buraya gelecek.</p>
-    </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <p class="hero-label">Landscape Architect & Urban Designer</p>
+                <h1>Creating Spaces That Inspire</h1>
+                <p>Award-winning landscape and urban design with a focus on sustainability, beauty, and human connection.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="#contact" class="btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="entry">
-      <h2>Örnek Başlık 2</h2>
-      <p>Başka bir içerik.</p>
-    </div>
-  </main>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">About</p>
+                <h2>Merve Yamak Aksoy</h2>
+            </div>
 
-  <script>
-    // Eğer elinizde JSON verisi varsa (data.json), bunu fetch ile yükleyip DOM'a ekleyebilirsiniz.
-    // fetch('/data.json').then(r=>r.json()).then(items=>{
-    //   const content = document.getElementById('content');
-    //   items.forEach(it=>{
-    //     const d = document.createElement('div'); d.className='entry';
-    //     d.innerHTML = `<h2>${it.title}</h2><p>${it.body}</p>`;
-    //     content.appendChild(d);
-    //   });
-    // });
-  </script>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Experience</h3>
+                    <div class="value">5+</div>
+                    <p>Years</p>
+                </div>
+                <div class="about-card">
+                    <h3>Awards Won</h3>
+                    <div class="value">4+</div>
+                    <p>International</p>
+                </div>
+                <div class="about-card">
+                    <h3>Education</h3>
+                    <div class="value">Bilkent</div>
+                    <p>University</p>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <p>I am a passionate landscape architect and urban designer with a deep commitment to creating spaces that enhance human experience and promote sustainability. With over 5 years of professional experience and a degree from Bilkent University, I have had the privilege of working on diverse projects ranging from intimate garden designs to large-scale urban planning initiatives.</p>
+                <br>
+                <p>My approach combines rigorous site analysis, innovative design thinking, and a profound respect for the natural environment. I believe that great design emerges from understanding the unique context of each project and collaborating closely with stakeholders to bring their vision to life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Portfolio</p>
+                <h2>Featured Projects</h2>
+                <p>A selection of award-winning landscape and urban design projects.</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">🏞️</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Urban Revitalization Project</h3>
+                        <p class="project-award">3rd Prize</p>
+                        <div class="project-meta">
+                            <span>📍 Turkey</span>
+                            <span>2021</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">🌲</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Podgorica Zlatica Forest</h3>
+                        <p class="project-award">Honorable Mention</p>
+                        <div class="project-meta">
+                            <span>📍 Montenegro</span>
+                            <span>2021</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">🌳</div>
+                    <div class="project-content">
+                        <h3 class="project-title">English Garden Design</h3>
+                        <div class="project-meta">
+                            <span>📍 Canada</span>
+                            <span>2022</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">🏗️</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Bursa Urban Design</h3>
+                        <p class="project-award">Honorable Prize</p>
+                        <div class="project-meta">
+                            <span>📍 Turkey</span>
+                            <span>2021</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Recognition</p>
+                <h2>Awards & Honors</h2>
+            </div>
+
+            <div class="awards-grid">
+                <div class="award-card fade-in">
+                    <div class="award-image">🏆</div>
+                    <div class="award-content">
+                        <h3 class="award-title">Eşdeğer Mansiyon</h3>
+                        <p class="award-event">International Competition - Zlatica Forest Park</p>
+                        <p class="award-event">Podgorica, Montenegro</p>
+                        <p class="award-year">2025</p>
+                    </div>
+                </div>
+
+                <div class="award-card fade-in">
+                    <div class="award-image">🥉</div>
+                    <div class="award-content">
+                        <h3 class="award-title">3. Mansiyon</h3>
+                        <p class="award-event">Balavca Deresi Fikir Projesi Yarışması</p>
+                        <p class="award-event">Muğla, Turkey</p>
+                        <p class="award-year">2024</p>
+                    </div>
+                </div>
+
+                <div class="award-card fade-in">
+                    <div class="award-image">🎖️</div>
+                    <div class="award-content">
+                        <h3 class="award-title">3rd Prize</h3>
+                        <p class="award-event">Mersin Urban Design Competition</p>
+                        <p class="award-year">2021</p>
+                    </div>
+                </div>
+
+                <div class="award-card fade-in">
+                    <div class="award-image">⭐</div>
+                    <div class="award-content">
+                        <h3 class="award-title">Honorable Prize</h3>
+                        <p class="award-event">Bursa Urban Design Competition</p>
+                        <p class="award-year">2021</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section id="media">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Media</p>
+                <h2>Project Videos</h2>
+                <p>Watch detailed project explanations and design walkthroughs.</p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/GMSkjz7DD1E" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">Mimarlarımızdan Tam Not Alan Peyzaj Tasarımı - Muğla Milas Peyzaj Projesi</p>
+                        <p class="video-meta">Copoint Design • 13:58</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/EVX7I_XlV1Q" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">Marmaris Projemizin Peyzaj Detaylarını Mimarımız Anlatıyor!</p>
+                        <p class="video-meta">Copoint Design • 3:58</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/xeSYGJj3E9k" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">Tasarım Özel Programı 7. Bölüm | A • H Villa Muğla Milas</p>
+                        <p class="video-meta">Copoint Design</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/MLHzAXdnxo0" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">Tasarım Özel Programı 3.Bölüm | Salkım Villa Fethiye</p>
+                        <p class="video-meta">Copoint Design</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/8kgf5H58550" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">Kurakçıl Peyzaj Projesi (Akdeniz Bahçe Tasarımı) Değerlendirme</p>
+                        <p class="video-meta">Copoint Design</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/_ZhGVLH4ONI" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">Doğal, Estetik ve Sürdürülebilir: Bu Peyzaj Projesi Çok Konuşulacak!</p>
+                        <p class="video-meta">Copoint Design</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/77y8wjSxjTY" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">Japon Bahçelerinden İlham Alan Minimalist Peyzaj Tasarımı</p>
+                        <p class="video-meta">Copoint Design</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/VbfYqcyL0fo" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">Kapalı Havuz ve Barbekü Tasarımıyla Muhteşem Peyzaj Mimarisi</p>
+                        <p class="video-meta">Copoint Design</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/8gDaqovsTF4" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">2023 Peyzaj Tasarımı Trendlerini Uyguladığımız Proje</p>
+                        <p class="video-meta">Copoint Design</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/sG4Ed79cMcw" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">Eğimli Arazi Tasarımında Tartışmalı Çözümler</p>
+                        <p class="video-meta">Copoint Design</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/CFn4upnYTEg" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="video-content">
+                        <p class="video-title">Eğimli Arazide Sürdürülebilir ve İnovatif Yaşam Alanları</p>
+                        <p class="video-meta">Copoint Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Services</p>
+                <h2>What I Offer</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🌿</div>
+                    <h3 class="service-title">Landscape Design</h3>
+                    <p class="service-description">Creating beautiful and functional outdoor spaces that enhance quality of life and promote environmental sustainability.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏙️</div>
+                    <h3 class="service-title">Urban Planning</h3>
+                    <p class="service-description">Strategic planning for sustainable and livable urban environments that balance development with ecological preservation.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">Site Analysis & Consultation</h3>
+                    <p class="service-description">Comprehensive analysis and expert guidance for your projects, including 3D visualization and detailed site assessments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Insights</p>
+                <h2>Latest Articles</h2>
+                <p>Thoughts on urban design, landscape architecture, and award-winning projects.</p>
+            </div>
+
+            <div class="blog-grid">
+                <div class="blog-card fade-in">
+                    <div class="blog-header">
+                        <p class="blog-category">Urban Design</p>
+                        <p class="blog-date">Apr 1, 2024</p>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">3rd PRIZE | MERSIN MUNICIPALITY</h3>
+                        <p class="blog-excerpt">Urban design analysis for understanding walkability and urban connectivity in Mersin Municipality's strategic planning. This project focuses on comprehensive urban design analysis to enhance walkability and create more livable urban spaces.</p>
+                        <a href="#" class="blog-read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card fade-in">
+                    <div class="blog-header">
+                        <p class="blog-category">Urban Design</p>
+                        <p class="blog-date">Apr 1, 2024</p>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">MANSION PRIZE | MILAS MUNICIPALITY</h3>
+                        <p class="blog-excerpt">Atlas approach to Milas Balavca creek - integrating natural water features into urban design. Using an atlas-based approach, we analyzed the Milas Balavca creek and surrounding landscape to develop an integrated urban design strategy.</p>
+                        <a href="#" class="blog-read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <p class="section-label">Get in Touch</p>
+                <h2>Let's Work Together</h2>
+                <p class="contact-description">Have a project in mind? I'd love to hear from you and explore how we can collaborate to create meaningful spaces.</p>
+
+                <div class="contact-buttons">
+                    <a href="mailto:merveyamakaksoy@gmail.com" class="btn-primary">Send Email</a>
+                    <a href="tel:+905050346897" class="btn-secondary">Call Me</a>
+                </div>
+
+                <div class="contact-info">
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem;">Or reach out directly:</p>
+                    <div class="contact-method">
+                        <a href="mailto:merveyamakaksoy@gmail.com">merveyamakaksoy@gmail.com</a>
+                    </div>
+                    <div class="contact-method">
+                        <a href="tel:+905050346897">+90 505 034 6897</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3 style="margin-bottom: 1rem;">Merve Yamak</h3>
+                <p style="margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.8);">Landscape Architect & Urban Designer</p>
+
+                <div class="social-links">
+                    <a href="mailto:merveyamakaksoy@gmail.com" title="Email">✉️</a>
+                    <a href="tel:+905050346897" title="Phone">📱</a>
+                    <a href="#" title="LinkedIn">💼</a>
+                    <a href="#" title="Instagram">📷</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Merve Yamak. All rights reserved. | Landscape Architecture & Urban Design Portfolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card, .award-card, .video-card, .service-card, .blog-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
