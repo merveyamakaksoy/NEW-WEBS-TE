@@ -928,17 +928,69 @@ awardImages.forEach(imgName => {
 });
 </script>
 </div>
-
+         
                 <div class="project-card fade-in">
                     <div class="project-image">🌳</div>
                     <div class="project-content">
-                        <h3 class="project-title">English Garden Design</h3>
+                        <h3 class="project-title">Istanbul Land Walls Topkapı Kaleiçi Square Urban Design Competition</h3>
                         <div class="project-meta">
-                            <span>📍 Canada</span>
+                            <span>📍 İstanbul, Turkey</span>
                             <span>2022</span>
                         </div>
                     </div>
                 </div>
+                               <div class="project-card fade-in">
+                    <div class="award-section" style="position: relative; margin: 1.5rem 0;">
+  <button onclick="document.getElementById('zlatica-slider').scrollBy({left: -400, behavior: 'smooth'})" 
+          style="position: absolute; left: -10px; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❮</button>
+
+  <button onclick="document.getElementById('zlatica-slider').scrollBy({left: 400, behavior: 'smooth'})" 
+          style="position: absolute; right: -10px; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❯</button>
+
+  <div id="zlatica-slider" style="display: flex; overflow-x: auto; gap: 15px; padding: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;">
+  </div>
+</div>
+                    <script>
+const zlaticaImages = [
+    "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 1.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 2.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 3.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 4.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 5.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 6.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 7.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 8.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 9.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 10.jpg"
+      ]
+];
+
+const sliderDiv = document.getElementById('award-slider');
+
+awardImages.forEach(imgName => {
+  const wrapper = document.createElement('div');
+  wrapper.style.cssText = "flex: 0 0 350px; scroll-snap-align: center;";
+  
+  const img = document.createElement('img');
+  img.src = encodeURI(imgName); 
+  img.style.cssText = "width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);";
+  
+  wrapper.appendChild(img);
+  sliderDiv.appendChild(wrapper);
+});
+</script>
+</div>
+         
+  <div class="award-card fade-in">
+                    <div class="award-image">🥉</div>
+                    <div class="award-content">
+                        <h3 class="award-title">3rd Honorable Mention</h3>
+                        <p class="award-event">Balavca Creek and Surroundings Concept Design Competition</p>
+                        <p class="award-event">Muğla, Turkey</p>
+                        <p class="award-year">2024</p>
+                    </div>
+                </div>
+       
 
                 <div class="project-card fade-in">
                     <div class="project-image">🏗️</div>
@@ -974,15 +1026,7 @@ awardImages.forEach(imgName => {
                     </div>
                 </div>
 
-                <div class="award-card fade-in">
-                    <div class="award-image">🥉</div>
-                    <div class="award-content">
-                        <h3 class="award-title">3. Mansiyon</h3>
-                        <p class="award-event">Balavca Deresi Fikir Projesi Yarışması</p>
-                        <p class="award-event">Muğla, Turkey</p>
-                        <p class="award-year">2024</p>
-                    </div>
-                </div>
+              
 
                 <div class="award-card fade-in">
                     <div class="award-image">🎖️</div>
@@ -1297,6 +1341,7 @@ awardImages.forEach(imgName => {
     </script>
 </body>
 </html>
+
 
 
 
