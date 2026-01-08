@@ -753,11 +753,12 @@
           style="position: absolute; left: 0; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❮</button>
 
   <div id="award-slider" style="display: flex; overflow-x: auto; gap: 20px; padding: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;">
-    </div>
+  
 
   <button onclick="document.getElementById('award-slider').scrollBy({left: 400, behavior: 'smooth'})" 
           style="position: absolute; right: 0; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❯</button>
 <script>
+     
 const awardImages = [
   "3. Ödül, Cumhuriyet Meydanı ve Atatürk Caddesi Çamlıbel Kentsel Tasarım Yarışması 10.jpg",
   "3. Ödül, Cumhuriyet Meydanı ve Atatürk Caddesi Çamlıbel Kentsel Tasarım Yarışması 11.jpg",
@@ -781,7 +782,8 @@ const awardImages = [
   "3. Ödül, Cumhuriyet Meydanı ve Atatürk Caddesi Çamlıbel Kentsel Tasarım Yarışması 9.jpeg",
   "3. Ödül, Cumhuriyet Meydanı ve Atatürk Caddesi Çamlıbel Kentsel Tasarım Yarışması.jpeg"
 ];
-
+    <script>
+ </div>
 const sliderDiv = document.getElementById('award-slider');
 
 awardImages.forEach(imgName => {
@@ -1188,6 +1190,7 @@ awardImages.forEach(imgName => {
     </script>
 </body>
 </html>
+
 
 
 
