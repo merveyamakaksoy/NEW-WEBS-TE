@@ -809,51 +809,52 @@ awardImages.forEach(imgName => {
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
-                    <div class="award-section" style="position: relative; margin: 1.5rem 0;">
-  <button onclick="document.getElementById('zlatica-slider').scrollBy({left: -400, behavior: 'smooth'})" 
-          style="position: absolute; left: -10px; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❮</button>
-
-  <button onclick="document.getElementById('zlatica-slider').scrollBy({left: 400, behavior: 'smooth'})" 
-          style="position: absolute; right: -10px; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❯</button>
-
-  <div id="zlatica-slider" style="display: flex; overflow-x: auto; gap: 15px; padding: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;">
-  </div>
-</div>
-                    <script>
-const zlaticaImages = [
-  "zlatica-park10-1024x724.jpg",
-  "zlatica-park11-1024x724.jpg",  
-  "zlatica-park4-1024x724.jpg",
-  "zlatica-park6-1024x724.jpg",
-  "zlatica-park8-1024x724.jpg",
-  "zlatica-park9-1024x724.jpg"
-];
-
-const zlaticaDiv = document.getElementById('zlatica-slider');
-zlaticaImages.forEach(imgName => {
-    const wrapper = document.createElement('div');
-    wrapper.style.cssText = "flex: 0 0 350px; scroll-snap-align: center;";
-    const img = document.createElement('img');
-    img.src = encodeURI(imgName);
-    img.style.cssText = "width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);";
-    wrapper.appendChild(img);
-    zlaticaDiv.appendChild(wrapper);
-});
-</script>
-</div>
-                  <div class="project-card fade-in">
+<div class="project-card fade-in">
     <div class="award-section" style="position: relative; margin: 2rem 0;">
-        <button onclick="document.getElementById('zlatica-slider').scrollBy({left: -400, behavior: 'smooth'})" style="position: absolute; left: 0; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❮</button>
-        <button onclick="document.getElementById('zlatica-slider').scrollBy({left: 400, behavior: 'smooth'})" style="position: absolute; right: 0; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❯</button>
-        
-        <div id="zlatica-slider" style="display: flex; overflow-x: auto; gap: 20px; padding: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;"></div>
+        <button onclick="document.getElementById('zlatica-slider').scrollBy({left: -400, behavior: 'smooth'})" 
+                style="position: absolute; left: 0; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❮</button>
+
+        <button onclick="document.getElementById('zlatica-slider').scrollBy({left: 400, behavior: 'smooth'})" 
+                style="position: absolute; right: 0; top: 50%; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; transform: translateY(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">❯</button>
+
+        <div id="zlatica-slider" style="display: flex; overflow-x: auto; gap: 20px; padding: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;">
+        </div>
     </div>
+
     <div class="project-content">
         <h3 class="project-title">Podgorica Zlatica Forest</h3>
         <p class="project-award">Honorable Mention</p>
-        <div class="project-meta"><span>📍 Montenegro</span><span>2025</span></div>
+        <div class="project-meta">
+            <span>📍 Montenegro</span>
+            <span>2025</span>
+        </div>
     </div>
+
+    <script>
+        // Podgorica projesi görselleri
+        const zlaticaImages = [
+            "zlatica-park10-1024x724.jpg",
+            "zlatica-park11-1024x724.jpg",  
+            "zlatica-park4-1024x724.jpg",
+            "zlatica-park6-1024x724.jpg",
+            "zlatica-park8-1024x724.jpg",
+            "zlatica-park9-1024x724.jpg"
+        ];
+
+        const zlaticaDiv = document.getElementById('zlatica-slider');
+        
+        zlaticaImages.forEach(imgName => {
+            const wrapper = document.createElement('div');
+            wrapper.style.cssText = "flex: 0 0 350px; scroll-snap-align: center;";
+            
+            const img = document.createElement('img');
+            img.src = encodeURI(imgName);
+            img.style.cssText = "width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);";
+            
+            wrapper.appendChild(img);
+            zlaticaDiv.appendChild(wrapper);
+        });
+    </script>
 </div>
                        <div class="project-card fade-in">
                     <div class="award-section" style="position: relative; margin: 1.5rem 0;">
@@ -1337,6 +1338,7 @@ balavcaImages.forEach(imgName => {
     </script>
 </body>
 </html>
+
 
 
 
