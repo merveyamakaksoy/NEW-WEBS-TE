@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Benim Site - Manus Verileri</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; line-height:1.6; }
+    header { margin-bottom: 1.5rem; }
+    .entry { border-bottom: 1px solid #eee; padding: 0.75rem 0; }
+    .entry h2 { margin:0 0 0.25rem 0; font-size:1.1rem; }
+    .entry p { margin:0; color:#333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Manus Verilerim</h1>
+    <p>Bu sayfa Manus'tan aldığım verilerin gösterimi için örnektir.</p>
+  </header>
+
+  <main id="content">
+    <!-- Eğer verileriniz JSON ise fetch ve JS ile ekleyebilirsiniz -->
+    <div class="entry">
+      <h2>Örnek Başlık 1</h2>
+      <p>Örnek içerik — Manus'tan çekilen veri buraya gelecek.</p>
+    </div>
+
+    <div class="entry">
+      <h2>Örnek Başlık 2</h2>
+      <p>Başka bir içerik.</p>
+    </div>
+  </main>
+
+  <script>
+    // Eğer elinizde JSON verisi varsa (data.json), bunu fetch ile yükleyip DOM'a ekleyebilirsiniz.
+    // fetch('/data.json').then(r=>r.json()).then(items=>{
+    //   const content = document.getElementById('content');
+    //   items.forEach(it=>{
+    //     const d = document.createElement('div'); d.className='entry';
+    //     d.innerHTML = `<h2>${it.title}</h2><p>${it.body}</p>`;
+    //     content.appendChild(d);
+    //   });
+    // });
+  </script>
+</body>
+</html>
