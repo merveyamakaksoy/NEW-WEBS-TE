@@ -857,6 +857,30 @@ awardImages.forEach(imgName => {
                 </div>
             </div>
 
+             <div class="project-card fade-in" style="margin-bottom: 3rem;">
+                <div class="project-header" style="margin-bottom: 1rem; padding-left: 10px;">
+                    <h3 class="project-title">Purchase Award, Bursa Khans District Çarşıbaşı Urban Design Project Competition</h3>
+                    <p class="project-award" style="color: #28a745; font-weight: bold;">📍 Bursa, Turkey 2021</p>
+                </div>
+                <div class="award-section" style="position: relative;">
+                    <button onclick="document.getElementById('Bursa-slider').scrollBy({left: -400, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 50%; z-index: 10; background: white; border-radius: 50%; width: 40px; height: 40px; border: 1px solid #ccc; cursor: pointer; transform: translateY(-50%);">❮</button>
+                    <button onclick="document.getElementById('Bursa-slider').scrollBy({left: 400, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 50%; z-index: 10; background: white; border-radius: 50%; width: 40px; height: 40px; border: 1px solid #ccc; cursor: pointer; transform: translateY(-50%);">❯</button>
+                    <div id="Bursa-slider" style="display: flex; overflow-x: auto; gap: 15px; padding: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;"></div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in" style="margin-bottom: 3rem;">
+                <div class="project-header" style="margin-bottom: 1rem; padding-left: 10px;">
+                    <h3 class="project-title"> Kent Kent Düşleri 11-Numune Hospital and Surroundings Evaluation Project National Idea Competition</h3>
+                    <p class="project-award" style="color: #28a745; font-weight: bold;">📍 Ankara, Turkey 2019</p>
+                </div>
+                <div class="award-section" style="position: relative;">
+                    <button onclick="document.getElementById('kentduslerı-slider').scrollBy({left: -400, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 50%; z-index: 10; background: white; border-radius: 50%; width: 40px; height: 40px; border: 1px solid #ccc; cursor: pointer; transform: translateY(-50%);">❮</button>
+                    <button onclick="document.getElementById('kentduslerı-slider').scrollBy({left: 400, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 50%; z-index: 10; background: white; border-radius: 50%; width: 40px; height: 40px; border: 1px solid #ccc; cursor: pointer; transform: translateY(-50%);">❯</button>
+                    <div id="kentduslerı-slider" style="display: flex; overflow-x: auto; gap: 15px; padding: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;"></div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </section>
@@ -877,7 +901,12 @@ const galleries = {
         "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 2.jpg",
         "Mansiyon, İstanbul Kara Surları Topkapı Kaleiçi Meydanı Kentsel Tasarım Yarışması 3.jpg"
     ],
-    "balavca-slider": [
+    "Bursa-slider": [
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 1.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 2.jpg",
+        "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 3.jpg"
+    ],
+    "kentduslerı-slider": [
         "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 1.jpg",
         "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 2.jpg",
         "3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 3.jpg"
@@ -1234,6 +1263,7 @@ Object.keys(galleries).forEach(id => {
     </script>
 </body>
 </html>
+
 
 
 
