@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -636,6 +637,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -664,12 +666,95 @@
                 flex-direction: column;
             }
 
-            .btn-primary, .btn-secondary {
+            .btn-primary,
+            .btn-secondary {
                 width: 100%;
             }
         }
+
+        /* Slider Styles */
+        .project-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-slider:hover .slider-nav {
+            opacity: 1;
+        }
+
+        .slider-prev {
+            left: 10px;
+        }
+
+        .slider-next {
+            right: 10px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .dot.active {
+            background: white;
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -694,7 +779,8 @@
             <div class="hero-content fade-in">
                 <p class="hero-label">Landscape Architect & Urban Designer</p>
                 <h1>Creating Spaces That Inspire</h1>
-                <p>Award-winning landscape and urban design with a focus on sustainability, beauty, and human connection.</p>
+                <p>Award-winning landscape and urban design with a focus on sustainability, beauty, and human
+                    connection.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn-primary">View Projects</a>
                     <a href="#contact" class="btn-secondary">Get in Touch</a>
@@ -730,9 +816,74 @@
             </div>
 
             <div class="about-text">
-                <p>I am a passionate landscape architect and urban designer with a deep commitment to creating spaces that enhance human experience and promote sustainability. With over 5 years of professional experience and a degree from Bilkent University, I have had the privilege of working on diverse projects ranging from intimate garden designs to large-scale urban planning initiatives.</p>
+                <p>I am a passionate landscape architect and urban designer with a deep commitment to creating spaces
+                    that enhance human experience and promote sustainability. With over 5 years of professional
+                    experience and a degree from Bilkent University, I have had the privilege of working on diverse
+                    projects ranging from intimate garden designs to large-scale urban planning initiatives.</p>
                 <br>
-                <p>My approach combines rigorous site analysis, innovative design thinking, and a profound respect for the natural environment. I believe that great design emerges from understanding the unique context of each project and collaborating closely with stakeholders to bring their vision to life.</p>
+                <p>My approach combines rigorous site analysis, innovative design thinking, and a profound respect for
+                    the natural environment. I believe that great design emerges from understanding the unique context
+                    of each project and collaborating closely with stakeholders to bring their vision to life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Portfolio</p>
+                <h2>Featured Projects</h2>
+                <p>A selection of award-winning landscape and urban design projects.</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">🏞️</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Urban Revitalization Project</h3>
+                        <p class="project-award">3rd Prize</p>
+                        <div class="project-meta">
+                            <span>📍 Turkey</span>
+                            <span>2021</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">🌲</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Podgorica Zlatica Forest</h3>
+                        <p class="project-award">Honorable Mention</p>
+                        <div class="project-meta">
+                            <span>📍 Montenegro</span>
+                            <span>2021</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">🌳</div>
+                    <div class="project-content">
+                        <h3 class="project-title">English Garden Design</h3>
+                        <div class="project-meta">
+                            <span>📍 Canada</span>
+                            <span>2022</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">🏗️</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Bursa Urban Design</h3>
+                        <p class="project-award">Honorable Prize</p>
+                        <div class="project-meta">
+                            <span>📍 Turkey</span>
+                            <span>2021</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -747,7 +898,20 @@
 
             <div class="awards-grid">
                 <div class="award-card fade-in">
-                    <div class="award-image">zlatica-park6-1024x724</div>
+                    <div class="award-image">
+                        <div id="zlatica-slider" class="project-slider">
+                            <div class="slider-wrapper">
+                                <div class="slide"><img src="img/zlatica-award-1.jpg" alt="Zlatica Award 1"></div>
+                                <div class="slide"><img src="img/zlatica-award-2.jpg" alt="Zlatica Award 2"></div>
+                                <div class="slide"><img src="img/zlatica-award-3.jpg" alt="Zlatica Award 3"></div>
+                                <div class="slide"><img src="img/zlatica-award-4.jpg" alt="Zlatica Award 4"></div>
+                                <div class="slide"><img src="img/zlatica-award-5.jpg" alt="Zlatica Award 5"></div>
+                            </div>
+                            <button class="slider-nav slider-prev">❮</button>
+                            <button class="slider-nav slider-next">❯</button>
+                            <div class="slider-dots"></div>
+                        </div>
+                    </div>
                     <div class="award-content">
                         <h3 class="award-title">Eşdeğer Mansiyon</h3>
                         <p class="award-event">International Competition - Zlatica Forest Park</p>
@@ -757,7 +921,20 @@
                 </div>
 
                 <div class="award-card fade-in">
-                    <div class="award-image">3. Mansiyon, Balavca Deresi ve Yakın Çevresi Fikir Projesi Yarışması 1.jpg</div>
+                    <div class="award-image">
+                        <div id="balavca-slider" class="project-slider">
+                            <div class="slider-wrapper">
+                                <div class="slide"><img src="img/balavca-award-1.jpg" alt="Balavca Award 1"></div>
+                                <div class="slide"><img src="img/balavca-award-2.jpg" alt="Balavca Award 2"></div>
+                                <div class="slide"><img src="img/balavca-award-3.jpg" alt="Balavca Award 3"></div>
+                                <div class="slide"><img src="img/balavca-award-4.jpg" alt="Balavca Award 4"></div>
+                                <div class="slide"><img src="img/balavca-award-5.jpg" alt="Balavca Award 5"></div>
+                            </div>
+                            <button class="slider-nav slider-prev">❮</button>
+                            <button class="slider-nav slider-next">❯</button>
+                            <div class="slider-dots"></div>
+                        </div>
+                    </div>
                     <div class="award-content">
                         <h3 class="award-title">3. Mansiyon</h3>
                         <p class="award-event">Balavca Deresi Fikir Projesi Yarışması</p>
@@ -767,7 +944,20 @@
                 </div>
 
                 <div class="award-card fade-in">
-                    <div class="award-image">3. Ödül, Cumhuriyet Meydanı ve Atatürk Caddesi Çamlıbel Kentsel Tasarım Yarışması 2</div>
+                    <div class="award-image">
+                        <div id="mersin-slider" class="project-slider">
+                            <div class="slider-wrapper">
+                                <div class="slide"><img src="img/mersin-award-1.jpg" alt="Mersin Award 1"></div>
+                                <div class="slide"><img src="img/mersin-award-2.jpg" alt="Mersin Award 2"></div>
+                                <div class="slide"><img src="img/mersin-award-3.jpg" alt="Mersin Award 3"></div>
+                                <div class="slide"><img src="img/mersin-award-4.jpg" alt="Mersin Award 4"></div>
+                                <div class="slide"><img src="img/mersin-award-5.jpg" alt="Mersin Award 5"></div>
+                            </div>
+                            <button class="slider-nav slider-prev">❮</button>
+                            <button class="slider-nav slider-next">❯</button>
+                            <div class="slider-dots"></div>
+                        </div>
+                    </div>
                     <div class="award-content">
                         <h3 class="award-title">3rd Prize</h3>
                         <p class="award-event">Mersin Urban Design Competition</p>
@@ -776,7 +966,20 @@
                 </div>
 
                 <div class="award-card fade-in">
-                    <div class="award-image">Satın Alma, Bursa Hanlar Bölgesi Çarşıbaşı Kentsel Tasarım Proje Yarışması 27</div>
+                    <div class="award-image">
+                        <div id="bursa-slider" class="project-slider">
+                            <div class="slider-wrapper">
+                                <div class="slide"><img src="img/bursa-award-1.jpg" alt="Bursa Award 1"></div>
+                                <div class="slide"><img src="img/bursa-award-2.jpg" alt="Bursa Award 2"></div>
+                                <div class="slide"><img src="img/bursa-award-3.jpg" alt="Bursa Award 3"></div>
+                                <div class="slide"><img src="img/bursa-award-4.jpg" alt="Bursa Award 4"></div>
+                                <div class="slide"><img src="img/bursa-award-5.jpg" alt="Bursa Award 5"></div>
+                            </div>
+                            <button class="slider-nav slider-prev">❮</button>
+                            <button class="slider-nav slider-next">❯</button>
+                            <div class="slider-dots"></div>
+                        </div>
+                    </div>
                     <div class="award-content">
                         <h3 class="award-title">Honorable Prize</h3>
                         <p class="award-event">Bursa Urban Design Competition</p>
@@ -799,17 +1002,20 @@
             <div class="video-grid">
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/GMSkjz7DD1E" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/GMSkjz7DD1E" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
-                        <p class="video-title">Mimarlarımızdan Tam Not Alan Peyzaj Tasarımı - Muğla Milas Peyzaj Projesi</p>
+                        <p class="video-title">Mimarlarımızdan Tam Not Alan Peyzaj Tasarımı - Muğla Milas Peyzaj Projesi
+                        </p>
                         <p class="video-meta">Copoint Design • 13:58</p>
                     </div>
                 </div>
 
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/EVX7I_XlV1Q" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/EVX7I_XlV1Q" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
                         <p class="video-title">Marmaris Projemizin Peyzaj Detaylarını Mimarımız Anlatıyor!</p>
@@ -819,7 +1025,8 @@
 
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/xeSYGJj3E9k" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/xeSYGJj3E9k" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
                         <p class="video-title">Tasarım Özel Programı 7. Bölüm | A • H Villa Muğla Milas</p>
@@ -829,7 +1036,8 @@
 
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/MLHzAXdnxo0" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/MLHzAXdnxo0" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
                         <p class="video-title">Tasarım Özel Programı 3.Bölüm | Salkım Villa Fethiye</p>
@@ -839,7 +1047,8 @@
 
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/8kgf5H58550" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/8kgf5H58550" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
                         <p class="video-title">Kurakçıl Peyzaj Projesi (Akdeniz Bahçe Tasarımı) Değerlendirme</p>
@@ -849,7 +1058,8 @@
 
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/_ZhGVLH4ONI" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/_ZhGVLH4ONI" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
                         <p class="video-title">Doğal, Estetik ve Sürdürülebilir: Bu Peyzaj Projesi Çok Konuşulacak!</p>
@@ -859,7 +1069,8 @@
 
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/77y8wjSxjTY" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/77y8wjSxjTY" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
                         <p class="video-title">Japon Bahçelerinden İlham Alan Minimalist Peyzaj Tasarımı</p>
@@ -869,7 +1080,8 @@
 
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/VbfYqcyL0fo" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/VbfYqcyL0fo" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
                         <p class="video-title">Kapalı Havuz ve Barbekü Tasarımıyla Muhteşem Peyzaj Mimarisi</p>
@@ -879,7 +1091,8 @@
 
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/8gDaqovsTF4" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/8gDaqovsTF4" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
                         <p class="video-title">2023 Peyzaj Tasarımı Trendlerini Uyguladığımız Proje</p>
@@ -889,7 +1102,8 @@
 
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/sG4Ed79cMcw" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/sG4Ed79cMcw" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
                         <p class="video-title">Eğimli Arazi Tasarımında Tartışmalı Çözümler</p>
@@ -899,7 +1113,8 @@
 
                 <div class="video-card fade-in">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/CFn4upnYTEg" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.youtube.com/embed/CFn4upnYTEg" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
                     <div class="video-content">
                         <p class="video-title">Eğimli Arazide Sürdürülebilir ve İnovatif Yaşam Alanları</p>
@@ -922,19 +1137,22 @@
                 <div class="service-card fade-in">
                     <div class="service-icon">🌿</div>
                     <h3 class="service-title">Landscape Design</h3>
-                    <p class="service-description">Creating beautiful and functional outdoor spaces that enhance quality of life and promote environmental sustainability.</p>
+                    <p class="service-description">Creating beautiful and functional outdoor spaces that enhance quality
+                        of life and promote environmental sustainability.</p>
                 </div>
 
                 <div class="service-card fade-in">
                     <div class="service-icon">🏙️</div>
                     <h3 class="service-title">Urban Planning</h3>
-                    <p class="service-description">Strategic planning for sustainable and livable urban environments that balance development with ecological preservation.</p>
+                    <p class="service-description">Strategic planning for sustainable and livable urban environments
+                        that balance development with ecological preservation.</p>
                 </div>
 
                 <div class="service-card fade-in">
                     <div class="service-icon">📊</div>
                     <h3 class="service-title">Site Analysis & Consultation</h3>
-                    <p class="service-description">Comprehensive analysis and expert guidance for your projects, including 3D visualization and detailed site assessments.</p>
+                    <p class="service-description">Comprehensive analysis and expert guidance for your projects,
+                        including 3D visualization and detailed site assessments.</p>
                 </div>
             </div>
         </div>
@@ -957,7 +1175,10 @@
                     </div>
                     <div class="blog-content">
                         <h3 class="blog-title">3rd PRIZE | MERSIN MUNICIPALITY</h3>
-                        <p class="blog-excerpt">Urban design analysis for understanding walkability and urban connectivity in Mersin Municipality's strategic planning. This project focuses on comprehensive urban design analysis to enhance walkability and create more livable urban spaces.</p>
+                        <p class="blog-excerpt">Urban design analysis for understanding walkability and urban
+                            connectivity in Mersin Municipality's strategic planning. This project focuses on
+                            comprehensive urban design analysis to enhance walkability and create more livable urban
+                            spaces.</p>
                         <a href="#" class="blog-read-more">Read More →</a>
                     </div>
                 </div>
@@ -969,7 +1190,9 @@
                     </div>
                     <div class="blog-content">
                         <h3 class="blog-title">MANSION PRIZE | MILAS MUNICIPALITY</h3>
-                        <p class="blog-excerpt">Atlas approach to Milas Balavca creek - integrating natural water features into urban design. Using an atlas-based approach, we analyzed the Milas Balavca creek and surrounding landscape to develop an integrated urban design strategy.</p>
+                        <p class="blog-excerpt">Atlas approach to Milas Balavca creek - integrating natural water
+                            features into urban design. Using an atlas-based approach, we analyzed the Milas Balavca
+                            creek and surrounding landscape to develop an integrated urban design strategy.</p>
                         <a href="#" class="blog-read-more">Read More →</a>
                     </div>
                 </div>
@@ -983,7 +1206,8 @@
             <div class="contact-content">
                 <p class="section-label">Get in Touch</p>
                 <h2>Let's Work Together</h2>
-                <p class="contact-description">Have a project in mind? I'd love to hear from you and explore how we can collaborate to create meaningful spaces.</p>
+                <p class="contact-description">Have a project in mind? I'd love to hear from you and explore how we can
+                    collaborate to create meaningful spaces.</p>
 
                 <div class="contact-buttons">
                     <a href="mailto:merveyamakaksoy@gmail.com" class="btn-primary">Send Email</a>
@@ -1008,7 +1232,8 @@
         <div class="container">
             <div class="footer-content">
                 <h3 style="margin-bottom: 1rem;">Merve Yamak</h3>
-                <p style="margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.8);">Landscape Architect & Urban Designer</p>
+                <p style="margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.8);">Landscape Architect & Urban Designer
+                </p>
 
                 <div class="social-links">
                     <a href="mailto:merveyamakaksoy@gmail.com" title="Email">✉️</a>
@@ -1045,7 +1270,7 @@
             rootMargin: '0px 0px -100px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in');
@@ -1076,8 +1301,87 @@
                 }
             });
         });
+
+        // Slider Implementation
+        class ProjectSlider {
+            constructor(elementId) {
+                this.container = document.getElementById(elementId);
+                if (!this.container) return;
+
+                this.wrapper = this.container.querySelector('.slider-wrapper');
+                this.slides = this.container.querySelectorAll('.slide');
+                this.prevBtn = this.container.querySelector('.slider-prev');
+                this.nextBtn = this.container.querySelector('.slider-next');
+                this.dotsContainer = this.container.querySelector('.slider-dots');
+
+                this.currentIndex = 0;
+                this.totalSlides = this.slides.length;
+
+                this.init();
+            }
+
+            init() {
+                // Create dots
+                this.totalSlides = this.slides.length;
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.dotsContainer.appendChild(dot);
+                }
+
+                this.dots = this.dotsContainer.querySelectorAll('.dot');
+
+                // Event listeners
+                this.prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.prevSlide();
+                });
+
+                this.nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.nextSlide();
+                });
+            }
+
+            updateSlider() {
+                this.wrapper.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+
+                // Update dots
+                this.dots.forEach((dot, index) => {
+                    if (index === this.currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            nextSlide() {
+                this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+                this.updateSlider();
+            }
+
+            prevSlide() {
+                this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+                this.updateSlider();
+            }
+
+            goToSlide(index) {
+                this.currentIndex = index;
+                this.updateSlider();
+            }
+        }
+
+        // Initialize Sliders
+        document.addEventListener('DOMContentLoaded', () => {
+            new ProjectSlider('zlatica-slider');
+            new ProjectSlider('balavca-slider');
+            new ProjectSlider('mersin-slider');
+            new ProjectSlider('bursa-slider');
+        });
     </script>
 </body>
+
 </html>
-
-
