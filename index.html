@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merve Yamak - Landscape Architect & Urban Designer</title>
+    <title>Merve Yamak Aksoy | Landscape Architecture &amp; Urban Design</title>
+    <meta name="description" content="Landscape architecture and urban design portfolio of Merve Yamak Aksoy, featuring residential landscapes, public spaces and competition projects.">
     <style>
         * {
             margin: 0;
@@ -219,6 +220,14 @@
         /* About Section */
         #about {
             background: var(--background);
+        }
+
+        .about-portrait:not([hidden]) {
+            display: block;
+            width: min(100%, 22rem);
+            height: auto;
+            margin: 0 auto 2.5rem;
+            border-radius: 12px;
         }
 
         .about-grid {
@@ -752,6 +761,196 @@
         .dot.active {
             background: white;
         }
+            .hero-content h1 {
+            font-size: clamp(2.75rem, 8vw, 6.5rem);
+            line-height: 1.02;
+            letter-spacing: -0.045em;
+        }
+
+        .hero-content > p:not(.hero-label) {
+            max-width: 52ch;
+            margin-inline: auto;
+        }
+
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid currentColor;
+            outline-offset: 5px;
+        }
+
+        section[id] {
+            scroll-margin-top: 6rem;
+        }
+
+        .award-board-heading { margin: 2.5rem 0 1rem; }
+        .award-boards { border-block-start: 1px solid #d8d8d8; padding: 1rem 0; }
+        .award-boards summary { cursor: pointer; font-weight: 600; }
+        .award-board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .award-board-grid a { background: #f3f2ef; }
+        .award-board-grid img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
+
+        .project-scene { margin-bottom: 1.5rem; }
+        .project-frame {
+            position: relative;
+            display: grid;
+            align-items: end;
+            overflow: hidden;
+            isolation: isolate;
+            min-height: 19rem;
+            height: min(72svh, 46rem);
+            margin: 0;
+            border-radius: 1rem;
+            background: #1d2822;
+        }
+
+        .project-frame img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-frame figcaption {
+            position: relative;
+            padding: clamp(1.25rem, 5vw, 3rem);
+            background: linear-gradient(transparent, rgba(0, 0, 0, .88));
+            color: white;
+        }
+
+        .project-frame h3 { font-size: clamp(1.5rem, 4vw, 3rem); }
+
+        @media (prefers-reduced-motion: no-preference) and (min-height: 540px) {
+            @supports (animation-timeline: view()) {
+                .project-scene {
+                    min-height: 106svh;
+                    view-timeline-name: --project-scene;
+                }
+
+                .project-frame { position: sticky; top: 15svh; }
+
+                .project-frame img {
+                    animation: project-zoom 1ms linear both;
+                    animation-timeline: --project-scene;
+                    animation-range: entry 20% exit 80%;
+                }
+
+                @keyframes project-zoom {
+                    0% { transform: scale(1); }
+                    55% { transform: scale(1.16); }
+                    100% { transform: scale(1.02); }
+                }
+            }
+        }
+
+        :root {
+            --primary: #284c3d;
+            --primary-light: #38634f;
+            --secondary: #efede8;
+            --accent: #c7d5cc;
+            --foreground: #171b18;
+            --background: #faf9f6;
+            --border: #deded6;
+            --muted: #eeeee8;
+            --muted-foreground: #515950;
+        }
+
+        body { font-family: Inter, system-ui, sans-serif; }
+        nav { background: rgba(250, 249, 246, .88); backdrop-filter: blur(18px); }
+        .nav-content { padding: .85rem 0; gap: .85rem; }
+        .logo { font-size: .97rem; letter-spacing: -.025em; }
+        .nav-links { display: flex; gap: clamp(.7rem, 3vw, 2.4rem); }
+        .nav-links a { font-size: .84rem; }
+        .cta-button { padding: .55rem .95rem; }
+        .hero {
+            padding: clamp(5rem, 11vw, 10rem) 0 clamp(4rem, 8vw, 7rem);
+            background: var(--background);
+        }
+        .hero-content { max-width: 75rem; }
+        .hero-content h1 {
+            font-size: clamp(3rem, 8.5vw, 8.75rem);
+            font-weight: 650;
+            letter-spacing: -.075em;
+            text-wrap: balance;
+        }
+        .hero-label { color: var(--primary); }
+        .hero-content > p:not(.hero-label) {
+            max-width: 44ch;
+            font-size: clamp(1rem, 2vw, 1.32rem);
+            text-wrap: pretty;
+        }
+        #awards { padding-top: 1.25rem; }
+        #awards > .container { max-width: 1680px; }
+        .section-header h2 {
+            font-size: clamp(2.35rem, 6vw, 5rem);
+            line-height: 1.02;
+            letter-spacing: -.065em;
+        }
+        #awards .section-header { margin-bottom: clamp(1rem, 4vw, 3rem); }
+        .project-frame { border-radius: .6rem; }
+        .project-frame h3 { line-height: 1.08; letter-spacing: -.045em; }
+        .project-frame figcaption { padding-top: 4rem; }
+        .projects-grid { margin-top: 3rem; }
+        .project-card, .about-card, .award-card, .service-card, .blog-card, .video-card {
+            border: 1px solid var(--border);
+            box-shadow: none;
+            border-radius: .65rem;
+        }
+        @media (max-width: 580px) {
+            .nav-content { flex-wrap: wrap; justify-content: space-between; }
+            .nav-links { order: 3; flex-basis: 100%; }
+            nav .cta-button { font-size: .75rem; }
+        }
+
+        #home.hero {
+            isolation: isolate;
+            min-height: min(85svh, 58rem);
+            display: grid;
+            place-items: center;
+            background: #17231f;
+            color: #fff;
+        }
+        .hero-landscape {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        #home.hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, #10191788, #101917dd);
+            z-index: -1;
+        }
+        #home h1, #home .hero-content > p { color: #fff; }
+        #home .hero-label { color: #e4eee6; }
+        #home .btn-primary { background: #f8faf5; color: #19251e; }
+        #home .btn-secondary { background: transparent; color: #fff; border-color: #ffffff99; }
+        #awards {
+            background: #171e1a;
+            color: #f5f5ef;
+            padding-block: clamp(3rem, 7vw, 7rem);
+        }
+        #awards .section-header h2 { color: inherit; }
+        #awards .project-card { background: #f8f7f3; color: #171b18; }
+        #awards .project-frame { border-radius: 1rem; }
+        #awards .project-frame figcaption {
+            background: linear-gradient(transparent, #0c1512eb);
+        }
+        #about { padding-block: clamp(4rem, 10vw, 9rem); }
+
+        .award-project { margin-bottom: clamp(3rem, 8vw, 8rem); }
+        .award-project:last-child { margin-bottom: 0; }
+        .award-project .award-boards { border-color: #59665d; }
+        .award-project .award-boards summary { padding-inline: .35rem; }
+        .award-project .project-scene { margin-bottom: .5rem; }
     </style>
 </head>
 
@@ -760,13 +959,10 @@
     <nav>
         <div class="container">
             <div class="nav-content">
-                <a href="#" class="logo">Merve Yamak</a>
+                <a href="#home" class="logo">Merve Yamak Aksoy</a>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#awards">Awards</a></li>
                 </ul>
                 <a href="#contact" class="cta-button">Get in Touch</a>
             </div>
@@ -775,17 +971,206 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <img class="hero-landscape" src="zlatica-award-2.jpg" alt="" fetchpriority="high">
         <div class="container">
             <div class="hero-content fade-in">
                 <p class="hero-label">Landscape Architect & Urban Designer</p>
-                <h1>Creating Spaces That Inspire</h1>
-                <p>Award-winning landscape and urban design with a focus on sustainability, beauty, and human
-                    connection.</p>
+                <h1>Merve Yamak Aksoy</h1>
+                <p>I design residential landscapes and public spaces, from the first site study through grading, planting and Revit documentation.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn-primary">View Projects</a>
-                    <a href="#contact" class="btn-secondary">Get in Touch</a>
+                    <a href="#awards" class="btn-primary">View Awards</a>
+                    <a href="https://canva.link/tcztpkuurbr8cvt" class="btn-secondary">View Canva Portfolio</a>
+                    
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <div class="container">
+            <div class="section-header"><h2>Awards</h2></div>
+            <article class="award-project">
+                <div class="project-scene">
+                    <figure class="project-frame">
+                        <img src="zlatica-award-1.jpg" alt="Zlatica Forest Park" loading="lazy" decoding="async">
+                        <figcaption><h3>Zlatica Forest Park</h3><p>International · Honorable Mention</p></figcaption>
+                    </figure>
+                </div>
+                <details class="award-boards">
+                    <summary>View project gallery (6 images)</summary>
+                    <div class="award-board-grid">
+                        <a href="zlatica-award-1.jpg"><img src="zlatica-award-1.jpg" alt="Zlatica Forest Park — image 1" loading="lazy" decoding="async"></a>
+                        <a href="zlatica-award-2.jpg"><img src="zlatica-award-2.jpg" alt="Zlatica Forest Park — image 2" loading="lazy" decoding="async"></a>
+                        <a href="zlatica-award-3.jpg"><img src="zlatica-award-3.jpg" alt="Zlatica Forest Park — image 3" loading="lazy" decoding="async"></a>
+                        <a href="zlatica-award-4.jpg"><img src="zlatica-award-4.jpg" alt="Zlatica Forest Park — image 4" loading="lazy" decoding="async"></a>
+                        <a href="zlatica-award-5.jpg"><img src="zlatica-award-5.jpg" alt="Zlatica Forest Park — image 5" loading="lazy" decoding="async"></a>
+                        <a href="zlatica-park11-1024x724.jpg"><img src="zlatica-park11-1024x724.jpg" alt="Zlatica Forest Park — image 6" loading="lazy" decoding="async"></a>
+                    </div>
+                </details>
+            </article>
+            <article class="award-project">
+                <div class="project-scene">
+                    <figure class="project-frame">
+                        <img src="mersin-award-1.jpg" alt="Cumhuriyet Square &amp; Çamlıbel" loading="lazy" decoding="async">
+                        <figcaption><h3>Cumhuriyet Square &amp; Çamlıbel</h3><p>Türkiye · Third Prize</p></figcaption>
+                    </figure>
+                </div>
+                <details class="award-boards">
+                    <summary>View project gallery (20 images)</summary>
+                    <div class="award-board-grid">
+                        <a href="mersin-award-1.jpg"><img src="mersin-award-1.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 1" loading="lazy" decoding="async"></a>
+                        <a href="mersin-award-2.jpg"><img src="mersin-award-2.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 2" loading="lazy" decoding="async"></a>
+                        <a href="mersin-award-3.jpg"><img src="mersin-award-3.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 3" loading="lazy" decoding="async"></a>
+                        <a href="mersin-award-4.jpeg"><img src="mersin-award-4.jpeg" alt="Cumhuriyet Square &amp; Çamlıbel — image 4" loading="lazy" decoding="async"></a>
+                        <a href="mersin-award-5.jpg"><img src="mersin-award-5.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 5" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B118.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B118.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 6" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%203.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%203.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 7" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%205.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%205.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 8" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%207.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%207.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 9" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%208.gif"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%208.gif" alt="Cumhuriyet Square &amp; Çamlıbel — image 10" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2010.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2010.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 11" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2011.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2011.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 12" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2014.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2014.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 13" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2015.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2015.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 14" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2016.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2016.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 15" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2017.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2017.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 16" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2019.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2019.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 17" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2020.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2020.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 18" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2021.jpg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2021.jpg" alt="Cumhuriyet Square &amp; Çamlıbel — image 19" loading="lazy" decoding="async"></a>
+                        <a href="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1.jpeg"><img src="3.%20%C3%96d%C3%BCl%2C%20Cumhuriyet%20Meydan%C4%B1%20ve%20Atat%C3%BCrk%20Caddesi%20%C3%87aml%C4%B1bel%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1.jpeg" alt="Cumhuriyet Square &amp; Çamlıbel — image 20" loading="lazy" decoding="async"></a>
+                    </div>
+                </details>
+            </article>
+            <article class="award-project">
+                <div class="project-scene">
+                    <figure class="project-frame">
+                        <img src="balavca-award-1.jpg" alt="Balavca Stream" loading="lazy" decoding="async">
+                        <figcaption><h3>Balavca Stream</h3><p>Türkiye · Third Honorable Mention</p></figcaption>
+                    </figure>
+                </div>
+                <details class="award-boards">
+                    <summary>View project gallery (10 images)</summary>
+                    <div class="award-board-grid">
+                        <a href="balavca-award-1.jpg"><img src="balavca-award-1.jpg" alt="Balavca Stream — image 1" loading="lazy" decoding="async"></a>
+                        <a href="balavca-award-2.jpg"><img src="balavca-award-2.jpg" alt="Balavca Stream — image 2" loading="lazy" decoding="async"></a>
+                        <a href="balavca-award-3.jpg"><img src="balavca-award-3.jpg" alt="Balavca Stream — image 3" loading="lazy" decoding="async"></a>
+                        <a href="balavca-award-4.jpg"><img src="balavca-award-4.jpg" alt="Balavca Stream — image 4" loading="lazy" decoding="async"></a>
+                        <a href="balavca-award-5.jpg"><img src="balavca-award-5.jpg" alt="Balavca Stream — image 5" loading="lazy" decoding="async"></a>
+                        <a href="3.%20Mansiyon%2C%20Balavca%20Deresi%20ve%20Yak%C4%B1n%20%C3%87evresi%20Fikir%20Projesi%20Yar%C4%B1%C5%9Fmas%C4%B1%202.jpg"><img src="3.%20Mansiyon%2C%20Balavca%20Deresi%20ve%20Yak%C4%B1n%20%C3%87evresi%20Fikir%20Projesi%20Yar%C4%B1%C5%9Fmas%C4%B1%202.jpg" alt="Balavca Stream — image 6" loading="lazy" decoding="async"></a>
+                        <a href="3.%20Mansiyon%2C%20Balavca%20Deresi%20ve%20Yak%C4%B1n%20%C3%87evresi%20Fikir%20Projesi%20Yar%C4%B1%C5%9Fmas%C4%B1%203.jpg"><img src="3.%20Mansiyon%2C%20Balavca%20Deresi%20ve%20Yak%C4%B1n%20%C3%87evresi%20Fikir%20Projesi%20Yar%C4%B1%C5%9Fmas%C4%B1%203.jpg" alt="Balavca Stream — image 7" loading="lazy" decoding="async"></a>
+                        <a href="3.%20Mansiyon%2C%20Balavca%20Deresi%20ve%20Yak%C4%B1n%20%C3%87evresi%20Fikir%20Projesi%20Yar%C4%B1%C5%9Fmas%C4%B1%204.jpg"><img src="3.%20Mansiyon%2C%20Balavca%20Deresi%20ve%20Yak%C4%B1n%20%C3%87evresi%20Fikir%20Projesi%20Yar%C4%B1%C5%9Fmas%C4%B1%204.jpg" alt="Balavca Stream — image 8" loading="lazy" decoding="async"></a>
+                        <a href="3.%20Mansiyon%2C%20Balavca%20Deresi%20ve%20Yak%C4%B1n%20%C3%87evresi%20Fikir%20Projesi%20Yar%C4%B1%C5%9Fmas%C4%B1%207.jpg"><img src="3.%20Mansiyon%2C%20Balavca%20Deresi%20ve%20Yak%C4%B1n%20%C3%87evresi%20Fikir%20Projesi%20Yar%C4%B1%C5%9Fmas%C4%B1%207.jpg" alt="Balavca Stream — image 9" loading="lazy" decoding="async"></a>
+                        <a href="3.%20Mansiyon%2C%20Balavca%20Deresi%20ve%20Yak%C4%B1n%20%C3%87evresi%20Fikir%20Projesi%20Yar%C4%B1%C5%9Fmas%C4%B1%20%2010.jpg"><img src="3.%20Mansiyon%2C%20Balavca%20Deresi%20ve%20Yak%C4%B1n%20%C3%87evresi%20Fikir%20Projesi%20Yar%C4%B1%C5%9Fmas%C4%B1%20%2010.jpg" alt="Balavca Stream — image 10" loading="lazy" decoding="async"></a>
+                    </div>
+                </details>
+            </article>
+            <article class="award-project">
+                <div class="project-scene">
+                    <figure class="project-frame">
+                        <img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B134.jpg" alt="Topkapı Kaleiçi Square" loading="lazy" decoding="async">
+                        <figcaption><h3>Topkapı Kaleiçi Square</h3><p>Türkiye · Honorable Mention</p></figcaption>
+                    </figure>
+                </div>
+                <details class="award-boards">
+                    <summary>View project gallery (43 images)</summary>
+                    <div class="award-board-grid">
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B134.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B134.jpg" alt="Topkapı Kaleiçi Square — image 1" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%201.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%201.jpg" alt="Topkapı Kaleiçi Square — image 2" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%202.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%202.jpg" alt="Topkapı Kaleiçi Square — image 3" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%203.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%203.jpg" alt="Topkapı Kaleiçi Square — image 4" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%204.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%204.jpg" alt="Topkapı Kaleiçi Square — image 5" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%205.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%205.jpg" alt="Topkapı Kaleiçi Square — image 6" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%206.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%206.jpg" alt="Topkapı Kaleiçi Square — image 7" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%207.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%207.jpg" alt="Topkapı Kaleiçi Square — image 8" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%208.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%208.jpg" alt="Topkapı Kaleiçi Square — image 9" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%209.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%209.jpg" alt="Topkapı Kaleiçi Square — image 10" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2010.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2010.jpg" alt="Topkapı Kaleiçi Square — image 11" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2011.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2011.jpg" alt="Topkapı Kaleiçi Square — image 12" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2012.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2012.jpg" alt="Topkapı Kaleiçi Square — image 13" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2013.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2013.jpg" alt="Topkapı Kaleiçi Square — image 14" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2014.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2014.jpg" alt="Topkapı Kaleiçi Square — image 15" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2015.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2015.jpg" alt="Topkapı Kaleiçi Square — image 16" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2016.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2016.jpg" alt="Topkapı Kaleiçi Square — image 17" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2017.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2017.jpg" alt="Topkapı Kaleiçi Square — image 18" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2018.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2018.jpg" alt="Topkapı Kaleiçi Square — image 19" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2019.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2019.jpg" alt="Topkapı Kaleiçi Square — image 20" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2020.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2020.jpg" alt="Topkapı Kaleiçi Square — image 21" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2021.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2021.jpg" alt="Topkapı Kaleiçi Square — image 22" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2022.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2022.jpg" alt="Topkapı Kaleiçi Square — image 23" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2023.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2023.jpg" alt="Topkapı Kaleiçi Square — image 24" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2024.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2024.jpg" alt="Topkapı Kaleiçi Square — image 25" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2025.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2025.jpg" alt="Topkapı Kaleiçi Square — image 26" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2026.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2026.jpg" alt="Topkapı Kaleiçi Square — image 27" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2027.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2027.jpg" alt="Topkapı Kaleiçi Square — image 28" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2028.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2028.jpg" alt="Topkapı Kaleiçi Square — image 29" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2029.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2029.jpg" alt="Topkapı Kaleiçi Square — image 30" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2030.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2030.jpg" alt="Topkapı Kaleiçi Square — image 31" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2031.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2031.jpg" alt="Topkapı Kaleiçi Square — image 32" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2032.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2032.jpg" alt="Topkapı Kaleiçi Square — image 33" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2033.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2033.jpg" alt="Topkapı Kaleiçi Square — image 34" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2035.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2035.jpg" alt="Topkapı Kaleiçi Square — image 35" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2036.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2036.jpg" alt="Topkapı Kaleiçi Square — image 36" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2037.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2037.jpg" alt="Topkapı Kaleiçi Square — image 37" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2038.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2038.jpg" alt="Topkapı Kaleiçi Square — image 38" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2039.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2039.jpg" alt="Topkapı Kaleiçi Square — image 39" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2040.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2040.jpg" alt="Topkapı Kaleiçi Square — image 40" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2041.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2041.jpg" alt="Topkapı Kaleiçi Square — image 41" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2042.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2042.jpg" alt="Topkapı Kaleiçi Square — image 42" loading="lazy" decoding="async"></a>
+                        <a href="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2043.jpg"><img src="Mansiyon%2C%20%C4%B0stanbul%20Kara%20Surlar%C4%B1%20Topkap%C4%B1%20Kalei%C3%A7i%20Meydan%C4%B1%20Kentsel%20Tasar%C4%B1m%20Yar%C4%B1%C5%9Fmas%C4%B1%2043.jpg" alt="Topkapı Kaleiçi Square — image 43" loading="lazy" decoding="async"></a>
+                    </div>
+                </details>
+            </article>
+            <article class="award-project">
+                <div class="project-scene">
+                    <figure class="project-frame">
+                        <img src="bursa-award-1.jpg" alt="Bursa Hanlar District" loading="lazy" decoding="async">
+                        <figcaption><h3>Bursa Hanlar District</h3><p>Türkiye · Purchase Award</p></figcaption>
+                    </figure>
+                </div>
+                <details class="award-boards">
+                    <summary>View project gallery (38 images)</summary>
+                    <div class="award-board-grid">
+                        <a href="bursa-award-1.jpg"><img src="bursa-award-1.jpg" alt="Bursa Hanlar District — image 1" loading="lazy" decoding="async"></a>
+                        <a href="bursa-award-2.jpg"><img src="bursa-award-2.jpg" alt="Bursa Hanlar District — image 2" loading="lazy" decoding="async"></a>
+                        <a href="bursa-award-3.jpg"><img src="bursa-award-3.jpg" alt="Bursa Hanlar District — image 3" loading="lazy" decoding="async"></a>
+                        <a href="bursa-award-4.jpg"><img src="bursa-award-4.jpg" alt="Bursa Hanlar District — image 4" loading="lazy" decoding="async"></a>
+                        <a href="bursa-award-5.jpg"><img src="bursa-award-5.jpg" alt="Bursa Hanlar District — image 5" loading="lazy" decoding="async"></a>
+                        <a href="bursa-award-6.jpg"><img src="bursa-award-6.jpg" alt="Bursa Hanlar District — image 6" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B125.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B125.jpg" alt="Bursa Hanlar District — image 7" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%202.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%202.jpg" alt="Bursa Hanlar District — image 8" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%203.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%203.jpg" alt="Bursa Hanlar District — image 9" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%204.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%204.jpg" alt="Bursa Hanlar District — image 10" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%205.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%205.jpg" alt="Bursa Hanlar District — image 11" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%206.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%206.jpg" alt="Bursa Hanlar District — image 12" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%207.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%207.jpg" alt="Bursa Hanlar District — image 13" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%209.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%209.jpg" alt="Bursa Hanlar District — image 14" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2010.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2010.jpg" alt="Bursa Hanlar District — image 15" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2011.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2011.jpg" alt="Bursa Hanlar District — image 16" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2012.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2012.jpg" alt="Bursa Hanlar District — image 17" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2013.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2013.jpg" alt="Bursa Hanlar District — image 18" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2014.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2014.jpg" alt="Bursa Hanlar District — image 19" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2015.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2015.jpg" alt="Bursa Hanlar District — image 20" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2016.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2016.jpg" alt="Bursa Hanlar District — image 21" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2018.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2018.jpg" alt="Bursa Hanlar District — image 22" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2020.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2020.jpg" alt="Bursa Hanlar District — image 23" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2022.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2022.jpg" alt="Bursa Hanlar District — image 24" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2023.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2023.jpg" alt="Bursa Hanlar District — image 25" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2024.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2024.jpg" alt="Bursa Hanlar District — image 26" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2026.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2026.jpg" alt="Bursa Hanlar District — image 27" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2028.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2028.jpg" alt="Bursa Hanlar District — image 28" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2029.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2029.jpg" alt="Bursa Hanlar District — image 29" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2030.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2030.jpg" alt="Bursa Hanlar District — image 30" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2031.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2031.jpg" alt="Bursa Hanlar District — image 31" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2032.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2032.jpg" alt="Bursa Hanlar District — image 32" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2033.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2033.jpg" alt="Bursa Hanlar District — image 33" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2034.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2034.jpg" alt="Bursa Hanlar District — image 34" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2035.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2035.jpg" alt="Bursa Hanlar District — image 35" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2036.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2036.jpg" alt="Bursa Hanlar District — image 36" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2037.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1%2037.jpg" alt="Bursa Hanlar District — image 37" loading="lazy" decoding="async"></a>
+                        <a href="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1.jpg"><img src="Sat%C4%B1n%20Alma%2C%20Bursa%20Hanlar%20B%C3%B6lgesi%20%C3%87ar%C5%9F%C4%B1ba%C5%9F%C4%B1%20Kentsel%20Tasar%C4%B1m%20Proje%20Yar%C4%B1%C5%9Fmas%C4%B1.jpg" alt="Bursa Hanlar District — image 38" loading="lazy" decoding="async"></a>
+                    </div>
+                </details>
+            </article>
         </div>
     </section>
 
@@ -797,16 +1182,18 @@
                 <h2>Merve Yamak Aksoy</h2>
             </div>
 
+            <img class="about-portrait" src="assets/profile.jpeg" alt="Merve Yamak Aksoy in her landscape design studio"
+                width="1254" height="1254" loading="lazy" decoding="async" hidden onload="this.hidden = false">
             <div class="about-grid">
                 <div class="about-card">
                     <h3>Experience</h3>
-                    <div class="value">5+</div>
-                    <p>Years</p>
+                    <div class="value">7</div>
+                    <p>Years · Since 2019</p>
                 </div>
                 <div class="about-card">
-                    <h3>Awards Won</h3>
-                    <div class="value">4+</div>
-                    <p>International</p>
+                    <h3>Competition Awards</h3>
+                    <div class="value">7</div>
+                    <p>1 international · 6 in Türkiye</p>
                 </div>
                 <div class="about-card">
                     <h3>Education</h3>
@@ -817,175 +1204,11 @@
 
             <div class="about-text">
                 <p>I am a passionate landscape architect and urban designer with a deep commitment to creating spaces
-                    that enhance human experience and promote sustainability. With over 5 years of professional
-                    experience and a degree from Bilkent University, I have had the privilege of working on diverse
-                    projects ranging from intimate garden designs to large-scale urban planning initiatives.</p>
+                    that enhance human experience and promote sustainability. I graduated from Bilkent University and have worked in landscape architecture and urban design since 2019, on projects ranging from private gardens to large-scale urban design.</p>
                 <br>
                 <p>My approach combines rigorous site analysis, innovative design thinking, and a profound respect for
                     the natural environment. I believe that great design emerges from understanding the unique context
                     of each project and collaborating closely with stakeholders to bring their vision to life.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label">Portfolio</p>
-                <h2>Featured Projects</h2>
-                <p>A selection of award-winning landscape and urban design projects.</p>
-            </div>
-
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-image">🏞️</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Urban Revitalization Project</h3>
-                        <p class="project-award">3rd Prize</p>
-                        <div class="project-meta">
-                            <span>📍 Turkey</span>
-                            <span>2021</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">🌲</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Podgorica Zlatica Forest</h3>
-                        <p class="project-award">Honorable Mention</p>
-                        <div class="project-meta">
-                            <span>📍 Montenegro</span>
-                            <span>2021</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">🌳</div>
-                    <div class="project-content">
-                        <h3 class="project-title">English Garden Design</h3>
-                        <div class="project-meta">
-                            <span>📍 Canada</span>
-                            <span>2022</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">🏗️</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Bursa Urban Design</h3>
-                        <p class="project-award">Honorable Prize</p>
-                        <div class="project-meta">
-                            <span>📍 Turkey</span>
-                            <span>2021</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Awards Section -->
-    <section id="awards">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label">Recognition</p>
-                <h2>Awards & Honors</h2>
-            </div>
-
-            <div class="awards-grid">
-                <div class="award-card fade-in">
-                    <div class="award-image">
-                        <div id="zlatica-slider" class="project-slider">
-                            <div class="slider-wrapper">
-                                <div class="slide"><img src="zlatica-award-1.jpg" alt="Zlatica Award 1"></div>
-                                <div class="slide"><img src="zlatica-award-2.jpg" alt="Zlatica Award 2"></div>
-                                <div class="slide"><img src="zlatica-award-3.jpg" alt="Zlatica Award 3"></div>
-                                <div class="slide"><img src="zlatica-award-4.jpg" alt="Zlatica Award 4"></div>
-                                <div class="slide"><img src="zlatica-award-5.jpg" alt="Zlatica Award 5"></div>
-                            </div>
-                            <button class="slider-nav slider-prev">❮</button>
-                            <button class="slider-nav slider-next">❯</button>
-                            <div class="slider-dots"></div>
-                        </div>
-                    </div>
-                    <div class="award-content">
-                        <h3 class="award-title">Eşdeğer Mansiyon</h3>
-                        <p class="award-event">International Competition - Zlatica Forest Park</p>
-                        <p class="award-event">Podgorica, Montenegro</p>
-                        <p class="award-year">2025</p>
-                    </div>
-                </div>
-
-                <div class="award-card fade-in">
-                    <div class="award-image">
-                        <div id="balavca-slider" class="project-slider">
-                            <div class="slider-wrapper">
-                                <div class="slide"><img src="balavca-award-1.jpg" alt="Balavca Award 1"></div>
-                                <div class="slide"><img src="balavca-award-2.jpg" alt="Balavca Award 2"></div>
-                                <div class="slide"><img src="balavca-award-3.jpg" alt="Balavca Award 3"></div>
-                                <div class="slide"><img src="balavca-award-4.jpg" alt="Balavca Award 4"></div>
-                                <div class="slide"><img src="balavca-award-5.jpg" alt="Balavca Award 5"></div>
-                            </div>
-                            <button class="slider-nav slider-prev">❮</button>
-                            <button class="slider-nav slider-next">❯</button>
-                            <div class="slider-dots"></div>
-                        </div>
-                    </div>
-                    <div class="award-content">
-                        <h3 class="award-title">3. Mansiyon</h3>
-                        <p class="award-event">Balavca Deresi Fikir Projesi Yarışması</p>
-                        <p class="award-event">Muğla, Turkey</p>
-                        <p class="award-year">2024</p>
-                    </div>
-                </div>
-
-                <div class="award-card fade-in">
-                    <div class="award-image">
-                        <div id="mersin-slider" class="project-slider">
-                            <div class="slider-wrapper">
-                                <div class="slide"><img src="mersin-award-1.jpg" alt="Mersin Award 1"></div>
-                                <div class="slide"><img src="mersin-award-2.jpg" alt="Mersin Award 2"></div>
-                                <div class="slide"><img src="mersin-award-3.jpg" alt="Mersin Award 3"></div>
-                                <div class="slide"><img src="mersin-award-4.jpg" alt="Mersin Award 4"></div>
-                                <div class="slide"><img src="mersin-award-5.jpg" alt="Mersin Award 5"></div>
-                            </div>
-                            <button class="slider-nav slider-prev">❮</button>
-                            <button class="slider-nav slider-next">❯</button>
-                            <div class="slider-dots"></div>
-                        </div>
-                    </div>
-                    <div class="award-content">
-                        <h3 class="award-title">3rd Prize</h3>
-                        <p class="award-event">Mersin Urban Design Competition</p>
-                        <p class="award-year">2021</p>
-                    </div>
-                </div>
-
-                <div class="award-card fade-in">
-                    <div class="award-image">
-                        <div id="bursa-slider" class="project-slider">
-                            <div class="slider-wrapper">
-                                <div class="slide"><img src="bursa-award-1.jpg" alt="Bursa Award 1"></div>
-                                <div class="slide"><img src="bursa-award-2.jpg" alt="Bursa Award 2"></div>
-                                <div class="slide"><img src="bursa-award-3.jpg" alt="Bursa Award 3"></div>
-                                <div class="slide"><img src="bursa-award-4.jpg" alt="Bursa Award 4"></div>
-                                <div class="slide"><img src="bursa-award-5.jpg" alt="Bursa Award 5"></div>
-                            </div>
-                            <button class="slider-nav slider-prev">❮</button>
-                            <button class="slider-nav slider-next">❯</button>
-                            <div class="slider-dots"></div>
-                        </div>
-                    </div>
-                    <div class="award-content">
-                        <h3 class="award-title">Honorable Prize</h3>
-                        <p class="award-event">Bursa Urban Design Competition</p>
-                        <p class="award-year">2021</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1376,10 +1599,6 @@
 
         // Initialize Sliders
         document.addEventListener('DOMContentLoaded', () => {
-            new ProjectSlider('zlatica-slider');
-            new ProjectSlider('balavca-slider');
-            new ProjectSlider('mersin-slider');
-            new ProjectSlider('bursa-slider');
         });
     </script>
 </body>
